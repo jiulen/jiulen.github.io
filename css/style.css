@@ -1,0 +1,282 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("../font/quicksandregular.ttf"); /*From Google Fonts*/
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth; /*For smooth scrolling*/
+    font-size: 16px;
+}
+body {
+    font-family: Quicksand, Ubuntu, sans-serif;
+}
+a {
+    text-decoration: none; /*Remove underline of links by default*/
+    color:white;
+    font-size: 1rem;
+}
+p {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
+/*general stuff*/
+.bold {
+    font-weight: 900;
+}
+.whitetext {
+    color: white;
+}
+.blacktext {
+    color: black;
+}
+.paddingtop {
+    padding-top: 1rem;
+}
+.paddingbottom {
+    padding-bottom: 1rem;
+}
+.fullwidth {
+    width: 100%;
+}
+.textcenter {
+    text-align: center;
+}
+.aligncenter {
+    align-items: center;
+}
+.alignstart {
+    align-items: flex-start;
+}
+.alignend {
+    align-items: flex-end;
+}
+.justifycenter {
+    justify-content: center;
+}
+.justifybetween {
+    justify-content: space-between;
+}
+.justifystart {
+    justify-content: flex-start;
+}
+.justifyend {
+    justify-content: flex-end;
+}
+.alignselfcenter {
+    align-self: center;
+}
+.justifyselfcenter {
+    justify-self: center;
+}
+.flexboxrow {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+}
+.flexboxcolumn {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+}
+.flexnogrow {
+    flex-grow: 0;
+}
+.darkbrownbg {
+    background-color: rgb(129, 84, 56);
+}
+.brownbg {
+    background-color: rgb(195, 159, 127);
+}
+/*For navigation menu*/
+nav {
+    background-color: black;
+    z-index: 2;
+    display: flex;
+    position: relative;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+}
+nav a {
+    padding: 0.3rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    background-color: rgb(5,8,45);
+    background-color: black;
+}
+.hamburger {
+    display: none;
+}
+/*For index*/
+.bgimg1 {
+    background-image: url(../img/bgimg1.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.indextext {
+    color: white;
+    width: 50%;
+    background-color: black;
+    border-style: solid;
+    border-radius: 0.5vh;
+    border-color: red;
+    padding: 0.5rem;
+}
+/*For intro*/
+.introbox1 {
+    width: 80%;
+}
+.introbox2 {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.introtextbox1 {
+    width: 65%;
+    padding-left: 2rem;
+    text-align: left;
+}
+.introtextbox2 {
+    width: 50%;
+    padding-left: 1rem;
+    text-align: left;
+}
+.intropic1, .intropic2 {
+    width: 35%;
+    margin-right: auto;
+}
+.equipmentscontainer {
+    margin-right: auto;
+    height: 350px;
+    row-gap: 5%;
+}
+.equipmentscontainer > .flexboxrow {
+    height: 30%;
+}
+.equipmentbox {
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-right: 2rem;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 10px;
+    background-color: white;
+}
+.equipmentimg {
+    height: auto;
+    width: 100%;
+    padding: 5%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*For skills*/
+/*For players*/
+/*Responsive web design stuff*/
+
+/*THIS*/
+@media screen and (max-width: 1440px) { /*screen with < 1440px Desktop */
+
+}
+
+@media screen and (max-width: 720px) { /*screen with < 720px* Tablet */
+    h1 {
+        font-size: 1.7rem;
+    }
+    /*For index*/
+    .indextext {
+        width: 60%;
+    }
+    /*For intro*/
+    .introbox2 {
+        flex-flow: column wrap;
+    }
+    .introtextbox1, .introtextbox2 {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 1em;
+    }
+    .intropic1, .intropic2 {
+        margin-right: 0;
+    }
+    .intropic1 {
+        width: 80%;
+    }
+    .equipmentscontainer {
+        flex-direction: row;
+        margin-right: 0;
+        margin-bottom: auto;
+        width: 100%;
+        row-gap: 0;
+        column-gap: 12.5%;
+    }
+    .equipmentscontainer > .flexboxrow {
+        flex-direction: column;
+        width: 25%;
+    }
+    .equipmentbox {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 540px) { /*screen with < 540px Mobile */
+    h1 {
+        font-size: 1.4rem;
+    }
+    /*For navigation menu*/
+    nav {
+        display: block;
+    }
+    nav a {
+        padding: 0.3rem 0;
+        display: block;
+        height: 100%;
+    }    
+    nav a:nth-child(n+2) { /*Only hide intro, skills and players*/
+        display: none;
+    }
+    .open a:nth-child(n+2) { /*Show intro, skills and players*/
+        display: block;
+    }
+    nav a:nth-child(n+2) { /*Change background color of 3 links below*/
+        background-color: rgb(5,8,45);
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 2.5%;
+        top: 10%;
+        height: 80%;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(127deg) brightness(103%) contrast(102%); /*White color, Values from https://codepen.io/sosuke/pen/Pjoqqp*/
+    }
+    /*For index*/
+    .bgimg1 {
+        background-position: center bottom;
+        align-items: flex-end;
+    }
+    .indextext {
+        width: 100%;
+    }
+    /*For intro*/
+}
