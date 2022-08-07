@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home page</title>
+        <title>Basketball Skills</title>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <script src="js/script.js" defer></script>
     </head>
@@ -13,10 +13,63 @@
             <img src="img/hamburger.svg" alt="hamburger icon" class="hamburger">
             <a href="intro.html">INTRO</a>
             <a href="#">SKILLS</a>
-            <a href="players.html">PLAYERS</a>
+            <a href="player.html">G.O.A.T</a>
         </nav>
-        <div>
+        <div class="flexboxcolumn aligncenter textcenter">
+            <div class="flexboxcolumn darkbrownbg paddingtop paddingbottom aligncenter whitetext fullwidth">
+                <div class="skillsbox1">
+                    <h1>Basketball Skills</h1>
+                    <div class="skillsbox2">
+                        <h2 class="skillstext1">Click on the cards</h2>
+                        <div class="flexboxrow justifycenter aligncenter cardsbox">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front dribblecard"></div>
+                                    <div class="flip-card-back">
+                                        <h2>Dribbling</h2>
+                                        <p>Bouncing the ball with one hand, often while walking or running.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front passcard"></div>
+                                    <div class="flip-card-back">
+                                        <h2>Passing</h2>
+                                        <p>Moving the basketball from one teammate to another.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front shootcard"></div>
+                                    <div class="flip-card-back">
+                                        <h2>Shooting</h2>
+                                        <p>Attempting to throw the ball through the basket to score points.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="flexboxcolumn brownbg paddingtop paddingbottom aligncenter blacktext fullwidth">
+                <div class="skillsbox1">
+                    <h1>Minigame</h1>
+                    <div class="skillsbox3">
+                        <p>Click on the ball to shoot it. Score as many baskets as possible in a row without missing.</p>
+                        <div class="flexboxrow paddingtop">
+                            <h2>Streak</h2>
+                            <h2 class="score"></h2>
+                        </div>
 
+                        <div class="flexboxrow paddingtop">
+                            <h2>HI</h2>
+                            <h2 class="highscore"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
