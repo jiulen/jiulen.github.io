@@ -93,6 +93,7 @@ if ( document.URL.includes("skills.html") ) {
     //Basketball animation
     let shootTimer;
     let up = true; //going up or down
+    let sound = false;
     function startShoot() {
         if (!shootTimer) {
             shootTimer = setInterval(animateShoot, 10); //Every 0.01s
@@ -121,6 +122,7 @@ if ( document.URL.includes("skills.html") ) {
                 //Player missed
                 up = true;
                 shot = false;
+                sound = false;
                 ball.classList.remove("down");
                 stopShoot();
 
@@ -128,11 +130,10 @@ if ( document.URL.includes("skills.html") ) {
                 textScore.innerHTML = parseInt(score, 10); //Update streak
             }
             else if (ballBounds.top > hoopBounds.bottom) {
-                //Played scored
-                var audio = new Audio("audio/swish.mp3"); //Swish sound effect
-                audio.play();
+                //Player scored
                 up = true;
                 shot = false;
+                sound = false;
                 ball.classList.remove("down");
                 stopShoot();
 
@@ -143,6 +144,15 @@ if ( document.URL.includes("skills.html") ) {
                     sessionStorage.setItem("highscore", highscore); //Update highscore in session storage
                     textHighScore.innerHTML = sessionStorage.getItem("highscore"); //set value to stored high score
                 }          
+            }            
+            else if (ballBounds.top > hoopBounds.top && //Check if top of ball touching hoop
+                     ballBounds.left > hoopBounds.left && ballBounds.right < hoopBounds.right) { //Ball within hoop width
+                //Player will score
+                if (!sound) {
+                    var audio = new Audio("audio/swish.mp3"); //Swish sound effect
+                    audio.play();
+                    sound = true;
+                }                
             }
         }
 
