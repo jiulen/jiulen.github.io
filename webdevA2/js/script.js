@@ -152,6 +152,8 @@ if ( document.URL.includes("skills.html") ) {
                      ballBounds.left > hoopBounds.left && ballBounds.right < hoopBounds.right) { //Ball within hoop width
                 //Player will score
                 if (!sound) {
+                    audio.pause();
+                    audio.currentTime = 0;
                     audio.play();
                     sound = true;
                 }                
