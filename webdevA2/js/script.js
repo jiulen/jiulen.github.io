@@ -89,7 +89,7 @@ if ( document.URL.includes("skills.html") ) {
     let hoop = document.querySelector(".hoop");
 
     var audio = new Audio("audio/swish.mp3"); //Swish sound effect
-    
+
     //Shoot basketball
     let shot = false;
 
@@ -148,12 +148,12 @@ if ( document.URL.includes("skills.html") ) {
                     textHighScore.innerHTML = sessionStorage.getItem("highscore"); //set value to stored high score
                 }          
             }            
-            else if (ballBounds.top > hoopBounds.top && //Check if top of ball touching hoop
+            else if (ballBounds.bottom > hoopBounds.top && //Check if top of ball touching hoop
                      ballBounds.left > hoopBounds.left && ballBounds.right < hoopBounds.right) { //Ball within hoop width
                 //Player will score
                 if (!sound) {
                     audio.pause();
-                    audio.currentTime = 0;
+                    audio.src = audio.src;
                     audio.play();
                     sound = true;
                 }                
