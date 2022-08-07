@@ -87,6 +87,9 @@ if ( document.URL.includes("skills.html") ) {
 
     let ball = document.querySelector(".basketball");
     let hoop = document.querySelector(".hoop");
+
+    var audio = new Audio("audio/swish.mp3"); //Swish sound effect
+    
     //Shoot basketball
     let shot = false;
 
@@ -149,7 +152,6 @@ if ( document.URL.includes("skills.html") ) {
                      ballBounds.left > hoopBounds.left && ballBounds.right < hoopBounds.right) { //Ball within hoop width
                 //Player will score
                 if (!sound) {
-                    var audio = new Audio("audio/swish.mp3"); //Swish sound effect
                     audio.play();
                     sound = true;
                 }                
